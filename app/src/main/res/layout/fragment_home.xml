@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="700dp"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <include layout="@layout/view_app_header" />
+
+        <include layout="@layout/view_hero_progress" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Sleep Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSleep"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:cardElevation="4dp"
+                android:backgroundTint="@color/bg_warm"
+                app:cardUseCompatPadding="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tvSleepLabel"
+                        style="?attr/textAppearanceHeadline6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sleep"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.example.wellnesstrack.ui.components.CircularProgressView
+                        android:id="@+id/cpvSleep"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvSleepLabel" />
+
+                    <TextView
+                        android:id="@+id/tvSleepHours"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/cpvSleep"
+                        app:layout_constraintEnd_toEndOf="@+id/cpvSleep"
+                        app:layout_constraintStart_toStartOf="@+id/cpvSleep"
+                        app:layout_constraintTop_toTopOf="@+id/cpvSleep"
+                        tools:text="5/8 Hours" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Water Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardWater"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:cardElevation="4dp"
+                app:cardUseCompatPadding="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tvWaterLabel"
+                        style="?attr/textAppearanceHeadline6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Water"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.example.wellnesstrack.ui.components.CircularProgressView
+                        android:id="@+id/cpvWater"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvWaterLabel" />
+
+                    <TextView
+                        android:id="@+id/tvWaterGlasses"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/cpvWater"
+                        app:layout_constraintEnd_toEndOf="@+id/cpvWater"
+                        app:layout_constraintStart_toStartOf="@+id/cpvWater"
+                        app:layout_constraintTop_toTopOf="@+id/cpvWater"
+                        tools:text="4/8 Glasses" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <!-- Mood pie chart card: placed between the sleep cards and the weekly sleep chart -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardMood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/bg_warm"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/tvMoodTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="This Week's Moods"
+                        android:textAppearance="?attr/textAppearanceSubtitle1"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" 😊"
+                        android:layout_marginStart="8dp" />
+
+                </LinearLayout>
+
+                <!-- Time range chips -->
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipRange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipToday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/accent_orange"
+                        android:text="Today" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipWeek"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/accent_orange"
+                        android:text="Week"
+                        android:checked="true" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipMonth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/accent_orange"
+                        android:text="Month" />
+                </com.google.android.material.chip.ChipGroup>
+
+                <!-- Chart area -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp">
+
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/pieChartMood"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:id="@+id/tvMoodEmpty"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:gravity="center"
+                        android:text="Log your first mood to see insights"
+                        android:visibility="gone" />
+
+                </FrameLayout>
+
+                <!-- Legend container -->
+                <LinearLayout
+                    android:id="@+id/llMoodLegend"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="12dp" />
+
+                <!-- Shake-to-log control -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp"
+                    android:gravity="end">
+
+                    <Button
+                        android:id="@+id/btnAllowShake"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Allow Shake Logging" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Weekly history chart under sleep card -->
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chartSleepWeekly"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginTop="12dp" />
+
+        <!-- Hydration Card (expanded) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardHydration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true"
+            android:layout_marginTop="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    style="?attr/textAppearanceHeadline6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hydration 💧" />
+
+                <TextView
+                    android:id="@+id/tvNextHydration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    tools:text="Next in: 55 minutes" />
+
+                <Button
+                    android:id="@+id/btnDrinkNow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Drink now" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>

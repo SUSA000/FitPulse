@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_mood"
+        android:title="Mood" />
+    <item
+        android:id="@+id/menu_view_mood_calendar"
+        android:title="View mood calendar" />
+    <item
+        android:id="@+id/menu_share_weekly_summary"
+        android:title="Share weekly summary" />
+    <item
+        android:id="@+id/menu_export_mood_report"
+        android:title="Export mood report" />
+</menu>

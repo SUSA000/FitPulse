@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Full-bleed background image for hero-style pages -->
+    <ImageView
+        android:id="@+id/bgImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        android:contentDescription="onboarding background" />
+
+    <!-- Top brand text -->
+    <TextView
+        android:id="@+id/tvBrand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="24dp"
+        android:text="FITPULSE"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFFFF"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:shadowColor="#99000000"
+        android:shadowDx="0"
+        android:shadowDy="2"
+        android:shadowRadius="4"
+        android:visibility="gone" />
+
+    <!-- Bottom gradient to improve legibility on images -->
+    <View
+        android:id="@+id/vGradient"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@drawable/onboarding_bottom_gradient" />
+
+    <!-- Default non-hero layout (centered illustration + texts) -->
+    <LinearLayout
+        android:id="@+id/centerContainer"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="24dp">
+
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:contentDescription="illustration"/>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+
+    <!-- Hero bottom texts overlay for image pages -->
+    <LinearLayout
+        android:id="@+id/bottomTexts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:layout_marginBottom="120dp"
+        android:padding="24dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvTitleHero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:text=""/>
+
+        <TextView
+            android:id="@+id/tvSubtitleHero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="#E6FFFFFF"
+            android:textSize="14sp"
+            android:text=""/>
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="textColorHintDark">#A9A9A9</color>
+    <color name="textColorHintLight">#D3D3D3</color>
+    <color name="primary_orange">#FF9800</color>
+    <color name="accent_orange">#FFA726</color>
+    <color name="bg_warm">#FFF3E0</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+</resources>

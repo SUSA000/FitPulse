@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_habit"
+        android:title="Habit" />
+    <item
+        android:id="@+id/menu_set_daily_goal"
+        android:title="Set daily goal" />
+    <item
+        android:id="@+id/menu_view_habit_history"
+        android:title="View habit history" />
+    <item
+        android:id="@+id/menu_reset_progress"
+        android:title="Reset today's progress" />
+</menu>
